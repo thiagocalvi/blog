@@ -1,0 +1,43 @@
+<%- include ('partials/header.ejs') %>
+<body>
+    <%- include ('partials/homenavbar.ejs') %>
+    <div class="container">
+        <div style="
+            padding: 2rem 1rem;
+            margin-bottom: 2rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;"
+            >
+            <h1 class="display-4">Bem vindo</h1>
+            <p>Simples blog</p>
+            <hr>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Dolore sapiente suscipit sunt veritatis voluptatem! Eum, 
+                soluta provident! Quisquam, vitae sint libero eum, beatae aspernatur earum 
+                consectetur voluptatem voluptates deleniti dignissimos.
+            </p>
+        </div>
+        <br>
+        <% articles.forEach(article => {%>
+            <div class="card">
+                <div class="card-header">
+                    <h2><%= article.title%></h2>
+                </div>
+                <div class="card-body">
+                    <a class="btn btn-success" href="/<%= article.slug %>">Ler artigo</a>
+                    <br>
+                    <p>Publicado em - <%= article.createdAt%></p>
+                </div>
+            </div>
+            <br>
+        <%})%>
+
+        <div class="col col-12">
+            <div class="row">
+                <a style="float:right;" href="/articles/page/1">Next >>></a>
+            </div>
+        </div>
+        <br>
+    </div>
+</body>
+<%- include ('partials/footer.ejs') %>

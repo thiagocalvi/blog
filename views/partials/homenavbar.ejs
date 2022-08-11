@@ -1,0 +1,18 @@
+<nav class="navbar navbar-dark bg-primary navbar-expand-lg">
+    <a href="/" class="navbar-brand" style="margin-left: 2em;">
+        Guia blog
+    </a>
+    <ul  class="navbar-nav mr-auto">
+        <li class="nav-link">
+            <a style="color: #fff;" href="/">Home</a>
+        </li>
+        <li class="nav-link">
+            <a style="color: #fff;" href="/login">Login</a>
+        </li>
+        <% categories.forEach(category =>{%>
+            <li class="nav-link">
+                <a style="color: #fff;" href="/category/<%= category.slug%>"><%= category.title%></a>
+            </li>
+        <%})%>
+    </ul>
+</nav>
